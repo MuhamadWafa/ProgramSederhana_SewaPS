@@ -91,3 +91,16 @@ def tampilkan_riwayat():
 
 Jika file belum ada → akan muncul pesan Belum ada riwayat.
 
+### Program Utama (LoopMenu)
+```python
+while True:
+    print("=== PROGRAM PENYEWAAN PLAYSTATION ===")
+    print("1. Sewa PS")
+    print("2. Lihat Riwayat Transaksi")
+    print("3. Keluar")
+```
+* Menu akan terus berulang
+  
+* Pengguna memilih fitur
+  
+* Jika menekan *3*, program berhenti
