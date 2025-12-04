@@ -27,4 +27,21 @@ harga_ps = {
  
  7000 → harga sewa per jam
 
+### 2. Variable Riwayat
+```python
+# List untuk menyimpan riwayat transaksi
+riwayat = []
+```
 
+Ini adalah list untuk menyimpan transaksi sebelum dikirim ke file.
+
+### 3. Fungsi Menu Ps
+```python
+def menu_ps():
+    print("\n=== PILIHAN JENIS PLAYSTATION ===")
+    for key, value in harga_ps.items():
+        print(f"{key}. {value[0]} - Rp{value[1]}/jam")
+```
+Menampilkan daftar PS beserta harga sewanya.
+
+for key, value in harga_ps.items() digunakan untuk membaca dictionary.
