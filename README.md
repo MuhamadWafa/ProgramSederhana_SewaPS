@@ -45,3 +45,49 @@ def menu_ps():
 Menampilkan daftar PS beserta harga sewanya.
 
 for key, value in harga_ps.items() digunakan untuk membaca dictionary.
+
+### 4. Fungsi Sewa Ps
+```python
+def sewa_ps():
+    print("\n=== INPUT DATA PENYEWA ===")
+    nama = input("Nama penyewa: ")
+
+    # Menampilkan menu PS
+    menu_ps()
+    pilihan = int(input("Pilih jenis PS (1/2/3): "))
+
+    if pilihan not in harga_ps:
+        print("Pilihan tidak valid!")
+        return
+
+    jenis_ps, harga_per_jam = harga_ps[pilihan]
+
+    durasi = int(input("Durasi sewa (jam): "))
+    total = durasi * harga_per_jam
+
+    # Simpan transaksi
+    transaksi = f"{nama} | {jenis_ps} | {durasi} jam | Total: Rp{total}"
+    riwayat.append(transaksi)
+
+    # Simpan ke file
+    with open("riwayat_ps.txt", "a") as file:
+        file.write(transaksi + "\n")
+```
+
+### 5. Tampilan Riwayat
+```python
+def tampilkan_riwayat():
+    print("\n=== RIWAYAT TRANSAKSI ===")
+    try:
+        with open("riwayat_ps.txt", "r") as file:
+            data = file.read()
+            print(data if data else "Belum ada transaksi.")
+    except FileNotFoundError:
+        print("Belum ada riwayat.")
+```
+* Membaca file riwayat
+
+* Menampilkan semua data transaksi
+
+Jika file belum ada → akan muncul pesan Belum ada riwayat.
+
